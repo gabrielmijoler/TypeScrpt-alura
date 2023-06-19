@@ -19,6 +19,7 @@ export class NegociacaoController {
     negociacao.data.setDate(12);// Naõ tiver o get no data ele altera para 12
     console.log(this.negociacoes.lista());
     this.limparFormulario();
+    this.limparFormulario();
   };
 
   criaNegociação():Negociacao {
