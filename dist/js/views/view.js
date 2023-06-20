@@ -4,5 +4,10 @@ export class View {
         this.elemento = document.querySelector(seletor);
     }
     ;
+    update(model) {
+        const templete = this.template(model);
+        this.elemento.innerHTML = templete; //  declarar templete da minha view
+    }
+    ;
 }
 ;

@@ -1,7 +1,7 @@
 import { Negociacoes } from "../models/negociacoes.js";
 import { View } from "./view.js";
 
-export class NegociacoesView extends View  {
+export class NegociacoesView extends View<Negociacoes>  {
 
   template(model: Negociacoes): string {
     return `
@@ -27,10 +27,4 @@ export class NegociacoesView extends View  {
       </table>  
     `
   };
-
-  update(model: Negociacoes): void {
-    const templete = this.template(model);
-    console.log(templete)
-    this.elemento.innerHTML = templete; //  declarar templete da minha vie
-  }
 };

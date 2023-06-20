@@ -25,10 +25,5 @@ export class NegociacoesView extends View {
     `;
     }
     ;
-    update(model) {
-        const templete = this.template(model);
-        console.log(templete);
-        this.elemento.innerHTML = templete; //  declarar templete da minha vie
-    }
 }
 ;
