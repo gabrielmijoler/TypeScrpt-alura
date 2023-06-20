@@ -1,8 +1,13 @@
 export class View {
     constructor(seletor, escapar) {
-        // tem acesso a esse elemento, mas meus filhos pode ter acesso tbm.
         this.escapar = false;
-        this.elemento = document.querySelector(seletor);
+        const elemento = document.querySelector(seletor);
+        if (elemento) {
+            this.elemento = elemento;
+        }
+        else {
+            throw Error(`Seletor ${seletor} não existe no DOM, Verifique.`);
+        }
         if (escapar) {
             this.escapar = escapar;
         }
@@ -13,7 +18,7 @@ export class View {
         if (this.escapar) {
             templete = templete.replace(/<script>[\s\S]*?\/script>/, '');
         }
-        this.elemento.innerHTML = templete; //  declarar templete da minha view
+        this.elemento.innerHTML = templete;
     }
     ;
 }

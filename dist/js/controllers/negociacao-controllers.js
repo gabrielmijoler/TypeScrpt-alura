@@ -4,8 +4,6 @@ import { Negociacoes } from "../models/negociacoes.js";
 import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
-    //private readonly SABADO = 6; //apenas leitura readonly
-    //private readonly DOMINGO = 0;
     constructor() {
         this.negociacoes = new Negociacoes();
         this.negocicoesView = new NegociacoesView('#negociacoesView', true);

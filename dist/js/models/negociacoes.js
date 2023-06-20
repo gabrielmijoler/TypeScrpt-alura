@@ -1,7 +1,6 @@
-//Negociacao[] mesmo q <Array>Negociacao
 export class Negociacoes {
     constructor() {
-        this.negociacoes = []; // os tipos date, quantidade e valor
+        this.negociacoes = [];
     }
     adiciona(negociacao) {
         this.negociacoes.push(negociacao);
@@ -13,7 +12,3 @@ export class Negociacoes {
     ;
 }
 ;
-// const negociacoes = new Negociacoes();
-//   negociacoes.lista().forEach(n => {
-//     n.data
-//   });
