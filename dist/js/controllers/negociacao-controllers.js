@@ -1,19 +1,23 @@
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
+import { MensagemView } from "../views/mensagem-view.js";
+import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
+        this.negocicoesView = new NegociacoesView('#negociacoesView');
+        this.mensagemView = new MensagemView('#mensagemView');
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
+        this.negocicoesView.update(this.negociacoes);
     }
     ;
     adiciona() {
         const negociacao = this.criaNegociação();
         this.negociacoes.adiciona(negociacao);
-        this.negociacoes.lista();
-        negociacao.data.setDate(12); // Naõ tiver o get no data ele altera para 12
-        console.log(this.negociacoes.lista());
+        this.negocicoesView.update(this.negociacoes);
+        this.mensagemView.update('Negociação Adicionada com sucesso');
         this.limparFormulario();
     }
     ;
