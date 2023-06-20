@@ -4,10 +4,10 @@ import { Negociacao } from "./negociacao";
 export class Negociacoes {
   private negociacoes: Negociacao[] = []; // os tipos date, quantidade e valor
   
-  adiciona(negociacao: Negociacao){
+  public adiciona(negociacao: Negociacao){
     this.negociacoes.push(negociacao);
   };
-  lista(): ReadonlyArray<Negociacao>{ // tem como usar readonly Negociacao[]
+  public lista(): ReadonlyArray<Negociacao>{ // tem como usar readonly Negociacao[]
     return[...this.negociacoes];
   };
 };

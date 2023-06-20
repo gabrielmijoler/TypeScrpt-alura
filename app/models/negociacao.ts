@@ -5,10 +5,10 @@ export class Negociacao {
         public readonly valor: number
         ) {}; // tipagem simplicada
 
-    get volume():number {
+    public get volume():number {
         return this.quantidade * this.valor;
     }; // fica pra calcular, semelgar as primeras propriedade
-    get data(): Date{
+    public get data(): Date{
         const data = new Date(this._data.getTime())
         return data;
     };// programacao defensiva
