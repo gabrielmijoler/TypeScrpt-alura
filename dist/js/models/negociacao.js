@@ -14,5 +14,13 @@ export class Negociacao {
         return data;
     }
     ; // programacao defensiva
+    static criaDe(dataString, quantidadeString, valorString) {
+        const exp = /-/g;
+        const date = new Date(dataString.replace(exp, ','));
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(valorString);
+        return new Negociacao(date, quantidade, valor);
+        // static pode chamar na classe , metodo estatico, se torna possivel chamar ele fora da classe
+    }
 }
 ;
