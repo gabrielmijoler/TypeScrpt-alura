@@ -9,7 +9,7 @@ export class NegociacaoController {
   private inputQuantidade: HTMLInputElement;
   private inputValor: HTMLInputElement;
   private negociacoes: Negociacoes = new Negociacoes();
-  private negocicoesView = new NegociacoesView('#negociacoesView');
+  private negocicoesView = new NegociacoesView('#negociacoesView', true);
   private mensagemView = new MensagemView('#mensagemView');
   //private readonly SABADO = 6; //apenas leitura readonly
   //private readonly DOMINGO = 0;
@@ -31,6 +31,7 @@ export class NegociacaoController {
     if(!this.ehDiaUtil(negociacao.data)){
       this.mensagemView
         .update("Apenas negociações em dias úteis são aceitas")
+        return;
     }
     this.negociacoes.adiciona(negociacao);
     this.negocicoesView.update(this.negociacoes);

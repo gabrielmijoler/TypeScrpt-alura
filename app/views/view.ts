@@ -5,13 +5,21 @@ export abstract class View<T> {
 
   protected elemento: HTMLElement; // usar para herança, so eu VIEW,
   // tem acesso a esse elemento, mas meus filhos pode ter acesso tbm.
+  private escapar = false;
 
-  constructor(seletor: string) {
+  
+  constructor(seletor: string, escapar?:boolean) {
     this.elemento = document.querySelector(seletor);
+    if(escapar){
+      this.escapar = escapar;
+    }
   };
 
   public update(model: T): void {
-    const templete = this.template(model);
+    let templete = this.template(model);
+    if(this.escapar){
+      templete = templete.replace(/<script>[\s\S]*?\/script>/, '');
+    }
     this.elemento.innerHTML = templete; //  declarar templete da minha view
   };
 
