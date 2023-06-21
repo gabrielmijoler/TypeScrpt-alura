@@ -1,5 +1,5 @@
-import { NegociacaoController } from './controllers/negociacao-controllers.js';
-import { NegociacoesView } from './views/negociacoes-view.js';
+import { NegociacaoController } from "./controllers/negociacao-controllers";
+
 
 const controller = new NegociacaoController();
 
